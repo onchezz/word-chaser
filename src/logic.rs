@@ -24,20 +24,7 @@ pub struct Word {
     pub example: String,
 }
 
-// enum ProgressState {
-//     Finished,
-//     Failed,
-// }
-
 impl Word {
-    pub fn new() -> Self {
-        Self {
-            word: String::new(),
-            meaning: String::new(),
-            example: String::new(),
-        }
-    }
-
     pub fn get_word_json(data: String) -> Self {
         //saving words to a vector of type ::word which is a struct
         let words: Vec<Word> = serde_json::from_str(data.as_str()).expect("error giving json");

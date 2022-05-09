@@ -7,17 +7,15 @@ mod tests {
     #[test]
     fn testing_created_word_is_of_expected_type() {
         // let word_data: String = logic::functionality::get_file_data();
-        let word: Word = logic::Word::new();
 
         let new_word = Word {
-            word: String::from(""),
-            meaning: String::from(""),
-            example: String::from(""),
+            word: String::from("hello"),
+            meaning: String::from("popular greetings"),
+            example: String::from("hello there how are you doing"),
         };
-
-        assert_eq!(&word.word, &new_word.word);
-        assert_eq!(&word.meaning, &new_word.meaning);
-        assert_eq!(&word.example, &new_word.example);
+        assert!(new_word.word.contains("hello"));
+        assert!(new_word.meaning.contains("popular greetings"));
+        assert!(new_word.example.contains("hello there how are you doing"));
     }
     #[test]
     fn test() {}
